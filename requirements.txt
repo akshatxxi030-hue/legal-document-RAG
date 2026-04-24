@@ -1,0 +1,11 @@
+langchain
+fastapi
+uvicorn
+Pydantic
+langchain-pinecone
+langchain-groq
+dotenv
+langchain-text-splitters
+langchain-community
+sentence-transformers
+langchain-huggingface
