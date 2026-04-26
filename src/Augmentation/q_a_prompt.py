@@ -17,7 +17,9 @@ def prompt_generation(context,question):
         If the context is insufficient just say you don't know.
         {context}
         Question:{question}
-        """,
+        
+        Do not use markdowns or asterisks.
+        Use a proper human eye pleasing formatting""",
         input_variables=['context','question']
         )
     chain= prompt | llm | parser

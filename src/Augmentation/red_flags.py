@@ -20,7 +20,9 @@ def red_flags(docs):
         You are a legal analyst .
         Extract all the red flags that exist in the document.
         Document:{document}
-        List out the red flags""",
+        List out the red flags
+        Do not use markdowns or asterisks.
+        Use a proper human eye pleasing formatting""",
         input_variables=['document']
     )
 

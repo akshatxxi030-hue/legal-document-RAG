@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal AI Assistant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="brand">
+                <i class="fa-solid fa-scale-balanced"></i>
+                <h1>Legal AI</h1>
+            </div>
+            <nav class="nav-menu">
+                <a href="#" class="nav-item active" id="nav-dashboard"><i class="fa-solid fa-house"></i> Dashboard</a>
+                <a href="#" class="nav-item" id="nav-chat"><i class="fa-solid fa-message"></i> Legal Chat</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-header">
+                <h2>Dashboard</h2>
+                <div class="status-indicator">
+                    <span class="status-dot"></span> System Ready
+                </div>
+            </header>
+
+            <div class="content-grid" id="dashboard-view">
+                <!-- Upload Section -->
+                <section class="card upload-card glass-panel">
+                    <h3><i class="fa-solid fa-file-pdf"></i> Document Upload</h3>
+                    <div class="drop-zone" id="drop-zone">
+                        <i class="fa-solid fa-cloud-arrow-up drop-icon"></i>
+                        <p>Drag & Drop your legal document here</p>
+                        <span>or</span>
+                        <input type="file" id="file-input" accept=".pdf" hidden>
+                        <button class="btn btn-primary" id="browse-btn">Browse Files</button>
+                    </div>
+                </section>
+
+                <!-- Actions Section -->
+                <section class="card actions-card glass-panel">
+                    <h3><i class="fa-solid fa-bolt"></i> Document Actions</h3>
+                    <p class="subtitle">Select an action for the uploaded document</p>
+                    <div class="action-buttons">
+                        <button class="btn btn-action" id="btn-summarize" disabled>
+                            <i class="fa-solid fa-file-lines"></i> Generate Summary
+                        </button>
+                        <button class="btn btn-action btn-danger" id="btn-redflag" disabled>
+                            <i class="fa-solid fa-triangle-exclamation"></i> Analyze Risks
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Results Section -->
+                <section class="card results-card glass-panel full-width">
+                    <h3><i class="fa-solid fa-chart-bar"></i> Analysis Results</h3>
+                    <div class="results-container" id="results-container">
+                        <div class="empty-state">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <p>Upload a document and select an action to view results.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Chat View -->
+            <div class="content-grid hidden" id="chat-view">
+                <section class="card chat-card glass-panel full-width">
+                    <div class="chat-header">
+                        <h3><i class="fa-solid fa-message"></i> Document Q&A</h3>
+                        <p class="subtitle">Ask questions about the uploaded document</p>
+                    </div>
+                    <div class="chat-history" id="chat-history">
+                        <div class="chat-message bot-message">
+                            <div class="avatar"><i class="fa-solid fa-robot"></i></div>
+                            <div class="message-content">Hello! Reviewing a contract? Ask me any specific questions.</div>
+                        </div>
+                    </div>
+                    <div class="chat-input-area">
+                        <input type="text" id="chat-input" placeholder="e.g. Is there a non-compete clause?">
+                        <button class="btn btn-primary" id="btn-send-chat">
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

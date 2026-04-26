@@ -25,7 +25,9 @@ def summary(docs):
         - Key terms and conditions
         
         Document:{document}
-        Provide a structured summary""",
+        Provide a structured summary
+        Do not use markdowns or asterisks.
+        Use a proper human eye pleasing formatting""",
         
 
         input_variables=['document']
