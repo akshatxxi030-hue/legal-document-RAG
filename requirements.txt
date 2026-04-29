@@ -1,5 +1,6 @@
 langchain
 fastapi
+pypdf
 uvicorn
 Pydantic
 langchain-pinecone
@@ -9,3 +10,4 @@ langchain-text-splitters
 langchain-community
 langchain-openai
 langchain-huggingface
+python-multipart
