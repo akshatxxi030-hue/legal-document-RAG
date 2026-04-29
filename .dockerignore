@@ -1,0 +1,14 @@
+.git
+.gitignore
+.venv
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+temp/
+test.py
+tests/
+.pytest_cache/
+*.pdf

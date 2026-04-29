@@ -1,7 +1,7 @@
-from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_openai import OpenAIEmbeddings
 
 def get_embeddings():
-    embeddings=HuggingFaceEmbeddings(
-        model_name="all-MiniLM-L6-v2"
+    embeddings=OpenAIEmbeddings(
+        model_name="text-embedding-3-small"
     )
     return embeddings

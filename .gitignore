@@ -3,4 +3,6 @@ env
 .venv/
 
 .env
+*.pdf
+
 

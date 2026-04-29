@@ -12,14 +12,14 @@ docs=pdf_loader("D:\THIS PC\python_workspace\legal_ai_rag\pages-29-deed-sample.p
 print(f"loaded {len(docs)}pages")
 
 #text splitting
-#print('splitting')
-#chunks=split_documents(docs)
-#print(f"split into {len(chunks)}chunks")
+print('splitting')
+chunks=split_documents(docs)
+print(f"split into {len(chunks)}chunks")
 
 #embedding generation
-#print("generating embeddings")
-#embedding=get_embeddings()
-#print(f"embeddings created")
+print("generating embeddings")
+embedding=get_embeddings()
+print(f"embeddings created")
 
 #Pinecone index
 #get_pinecone_index()
