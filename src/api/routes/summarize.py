@@ -5,6 +5,7 @@ from src.ingestions.loaders import pdf_loader
 from src.api.routes.upload import  upload_document
 import os
 
+
 router=APIRouter()
 
 class SummaryRequest(BaseModel):
@@ -21,6 +22,7 @@ async def summary_gen(request:SummaryRequest):
 
     result_summary=summary(docs)
 
+    
     return{
         "filename":request.filename,"result_summary":result_summary
     }

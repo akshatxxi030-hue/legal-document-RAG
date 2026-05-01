@@ -12,3 +12,4 @@ langchain-openai
 langchain-huggingface
 python-multipart
 sentence-transformers
+redis

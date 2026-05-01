@@ -1,8 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // --- State ---
     let currentUploadedFile = null;
-    const BASE_URL = window.location.port === '8000' ? '' : 'http://localhost:8000';
-
+    const BASE_URL = 'https://legal-document-rag.onrender.com';
     // --- DOM Elements ---
     // Navigation
     const navDashboard = document.getElementById('nav-dashboard');
