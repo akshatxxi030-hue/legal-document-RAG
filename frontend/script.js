@@ -1,7 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     // --- State ---
     let currentUploadedFile = null;
-    const BASE_URL = 'https://legal-document-rag.onrender.com';
+    // Uncomment the one you want to use:
+    const BASE_URL = 'http://localhost:8000'; // Local backend
+    //const BASE_URL = 'https://legal-document-rag.onrender.com'; // Deployed backend
     // --- DOM Elements ---
     // Navigation
     const navDashboard = document.getElementById('nav-dashboard');

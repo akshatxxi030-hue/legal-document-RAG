@@ -14,7 +14,7 @@ async def upload_document(file: UploadFile = File(...)):
     os.makedirs("temp",exist_ok=True)
     with open(temp_path,"wb") as f:
         shutil.copyfileobj(file.file,f)
-
+    
     docs=pdf_loader(temp_path)
     chunks=split_documents(docs)
     embeddings=get_embeddings()

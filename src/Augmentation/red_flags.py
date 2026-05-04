@@ -13,15 +13,21 @@ REDIS_URL=os.getenv("REDIS_URL")
 r=redis.from_url(REDIS_URL)
 
 
-def red_flags(docs):
+def red_flags(docs,filename=None):
 
     full_text=" ".join([doc.page_content for doc in docs])
     full_text=full_text[:15000]
-    cache_key="red_flag:"+hashlib.md5(full_text.encode()).hexdigest()
-    cached=r.get(cache_key)
-    if cached:
-        print("cache hit")
-        return json.loads(cached)
+    if filename:
+        cache_key="red_flag:"+hashlib.md5(filename.encode()).hexdigest()
+    else:  
+        cache_key="red_flag:"+hashlib.md5(full_text.encode()).hexdigest()
+    try:
+        cached=r.get(cache_key)
+        if cached:
+            return json.loads(cached)
+    except Exception as e:
+        print(f"Reddis cache GET error : {e}")
+
 
     llm=ChatGroq(
         model="llama-3.3-70b-versatile",
@@ -43,7 +49,9 @@ def red_flags(docs):
     chain=prompt | llm | parser
 
     response=chain.invoke({"document":full_text})
-
-    r.setex(cache_key,3600,json.dumps(response))
+    try:
+        r.setex(cache_key,3600,json.dumps(response))
+    except Exception as e:
+        print("Set redis error : {e} ")
     
     return response
